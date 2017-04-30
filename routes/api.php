@@ -18,7 +18,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::post('/quote',[
-    'uses'=>'QuoteController@addQuote'
+    'uses'=>'QuoteController@addQuote',
+    'middleware'=>'auth.jwt'
 ]);
 
 Route::get('/quotes', [
@@ -27,4 +28,8 @@ Route::get('/quotes', [
 
 Route::post('/register',[
     'uses' => 'UserController@signup'
+]);
+
+Route::post('/login',[
+    'uses' => 'UserController@signin'
 ]);
