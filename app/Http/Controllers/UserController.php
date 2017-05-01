@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use JWTAuth;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\JWTAuth;
 
 class UserController extends Controller{
     public function signup(Request $request){
